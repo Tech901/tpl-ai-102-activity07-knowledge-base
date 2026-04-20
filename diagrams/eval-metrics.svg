@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="RAG Evaluation Metrics diagram showing faithfulness, relevance, and groundedness algorithms">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E0E0E"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E1E1E"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="amberBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D5A94"/>
+      <stop offset="100%" stop-color="#1E3F6B"/>
+    </linearGradient>
+    <linearGradient id="greenBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8DC63F"/>
+      <stop offset="100%" stop-color="#6FA832"/>
+    </linearGradient>
+    <linearGradient id="underlineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <linearGradient id="arrowGradV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#2D5A94"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowAmber" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#FFBF3B"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#2D5A94"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#8DC63F"/>
+    </marker>
+    <marker id="arrowDown" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="url(#arrowGradV)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" rx="6" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="18" font-weight="bold" fill="#FAFAFA">RAG Evaluation Metrics</text>
+  <rect x="330" y="35" width="240" height="2" rx="1" fill="url(#underlineGrad)"/>
+
+  <!-- ═══════════════ Column 1: Faithfulness ═══════════════ -->
+  <text x="150" y="60" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#FFBF3B">Faithfulness</text>
+  <text x="150" y="74" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#888">Are answers supported by sources?</text>
+
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="85" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="60" y="85" width="4" height="40" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="150" y="102" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#FFBF3B">Input</text>
+  <text x="150" y="117" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">Answer + Source texts</text>
+
+  <!-- Arrow down -->
+  <line x1="150" y1="125" x2="150" y2="145" stroke="#FFBF3B" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Process -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="150" width="180" height="65" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="60" y="150" width="4" height="65" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="150" y="167" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#FFBF3B">Algorithm</text>
+  <text x="150" y="181" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">1. Split answer → sentences</text>
+  <text x="150" y="193" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">2. Extract char trigrams</text>
+  <text x="150" y="205" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">3. Check ≥50% overlap w/ sources</text>
+
+  <!-- Arrow down -->
+  <line x1="150" y1="215" x2="150" y2="235" stroke="#FFBF3B" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Score -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="240" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#FFBF3B" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="60" y="240" width="4" height="40" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="150" y="257" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#FFBF3B">Score</text>
+  <text x="150" y="272" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">supported / total sentences</text>
+
+  <!-- Threshold -->
+  <text x="150" y="300" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#FFBF3B">Threshold: ≥ 0.6</text>
+
+  <!-- ═══════════════ Column 2: Relevance ═══════════════ -->
+  <text x="450" y="60" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#2D5A94">Relevance</text>
+  <text x="450" y="74" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#888">Are retrieved chunks relevant to query?</text>
+
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="85" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="360" y="85" width="4" height="40" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="450" y="102" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#2D5A94">Input</text>
+  <text x="450" y="117" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">Query + Chunk texts</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="125" x2="450" y2="145" stroke="#2D5A94" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Process -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="150" width="180" height="65" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="360" y="150" width="4" height="65" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="450" y="167" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#2D5A94">Algorithm</text>
+  <text x="450" y="181" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">1. Extract keywords (len≥3)</text>
+  <text x="450" y="193" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">2. Remove stop words</text>
+  <text x="450" y="205" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">3. Check presence in chunks</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="215" x2="450" y2="235" stroke="#2D5A94" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Score -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="240" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#2D5A94" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="360" y="240" width="4" height="40" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="450" y="257" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#2D5A94">Score</text>
+  <text x="450" y="272" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">matched / total keywords</text>
+
+  <!-- Threshold -->
+  <text x="450" y="300" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#2D5A94">Threshold: ≥ 0.4</text>
+
+  <!-- ═══════════════ Column 3: Groundedness ═══════════════ -->
+  <text x="750" y="60" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#8DC63F">Groundedness</text>
+  <text x="750" y="74" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#888">Does the answer cite its sources?</text>
+
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="85" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="660" y="85" width="4" height="40" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="750" y="102" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#8DC63F">Input</text>
+  <text x="750" y="117" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">Answer + Citations + Sources</text>
+
+  <!-- Arrow down -->
+  <line x1="750" y1="125" x2="750" y2="145" stroke="#8DC63F" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Process -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="150" width="180" height="65" rx="4" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="660" y="150" width="4" height="65" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="750" y="167" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#8DC63F">Algorithm</text>
+  <text x="750" y="181" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">1. Split answer → sentences</text>
+  <text x="750" y="193" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">2. Find [source_N] patterns</text>
+  <text x="750" y="205" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">3. Verify source exists</text>
+
+  <!-- Arrow down -->
+  <line x1="750" y1="215" x2="750" y2="235" stroke="#8DC63F" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Score -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="240" width="180" height="40" rx="4" fill="url(#boxGrad)" stroke="#8DC63F" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="660" y="240" width="4" height="40" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="750" y="257" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#8DC63F">Score</text>
+  <text x="750" y="272" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">grounded / total sentences</text>
+
+  <!-- Threshold -->
+  <text x="750" y="300" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#8DC63F">Threshold: ≥ 0.5</text>
+
+  <!-- Divider lines -->
+  <line x1="300" y1="50" x2="300" y2="320" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="600" y1="50" x2="600" y2="320" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+</svg>

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What are the maximum noise levels allowed in residential zones?",
+    "answerable": true
+  },
+  {
+    "id": 2,
+    "question": "What is the maximum building height in the Midtown Overlay District near single-family residential zones?",
+    "answerable": true
+  },
+  {
+    "id": 3,
+    "question": "How does the Memphis 311 system handle pothole repair requests?",
+    "answerable": true
+  },
+  {
+    "id": 4,
+    "question": "What are the parking requirements for new commercial development in Midtown?",
+    "answerable": true
+  },
+  {
+    "id": 5,
+    "question": "What permits are needed for construction work in Downtown Memphis?",
+    "answerable": true
+  },
+  {
+    "id": 6,
+    "question": "What services does Memphis Light Gas and Water provide for water and sewer emergencies?",
+    "answerable": true
+  },
+  {
+    "id": 7,
+    "question": "What are the requirements for historic preservation in the Beale Street Historic District?",
+    "answerable": true
+  },
+  {
+    "id": 8,
+    "question": "How are trash collection routes organized across Memphis neighborhoods?",
+    "answerable": true
+  },
+  {
+    "id": 9,
+    "question": "What is the current population of each Memphis neighborhood?",
+    "answerable": false
+  },
+  {
+    "id": 10,
+    "question": "What are the details of the proposed 2027 Memphis city budget?",
+    "answerable": false
+  }
+]

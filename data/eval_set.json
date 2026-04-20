@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "question": "What are the noise limits for residential zones in Memphis?",
+    "expected_answerable": true,
+    "reference_answer": "65 dB during daytime and 55 dB at night",
+    "topic": "noise_ordinance"
+  },
+  {
+    "id": 2,
+    "question": "How do I file a complaint about a pothole on my street?",
+    "expected_answerable": true,
+    "reference_answer": "Submit a service request through the Memphis 311 system online or by calling 311",
+    "topic": "311_services"
+  },
+  {
+    "id": 3,
+    "question": "What is the schedule for bulk trash pickup in Midtown?",
+    "expected_answerable": true,
+    "reference_answer": "Bulk trash is collected on the second Monday of each month in the Midtown service area",
+    "topic": "solid_waste"
+  },
+  {
+    "id": 4,
+    "question": "What permits are required for home renovations in Memphis?",
+    "expected_answerable": true,
+    "reference_answer": "A building permit from the Office of Construction Code Enforcement is required for structural changes, electrical, and plumbing work",
+    "topic": "permits"
+  },
+  {
+    "id": 5,
+    "question": "What are the water quality standards for Memphis drinking water?",
+    "expected_answerable": true,
+    "reference_answer": "Memphis drinking water meets all EPA Safe Drinking Water Act standards and is sourced from the Memphis Sand Aquifer",
+    "topic": "water_quality"
+  },
+  {
+    "id": 6,
+    "question": "How does the city handle abandoned vehicles on public streets?",
+    "expected_answerable": true,
+    "reference_answer": "Abandoned vehicles are tagged with a 48-hour notice and towed if not moved within the notice period",
+    "topic": "code_enforcement"
+  },
+  {
+    "id": 7,
+    "question": "What are the operating hours for Memphis community centers?",
+    "expected_answerable": true,
+    "reference_answer": "Most Memphis community centers operate Monday through Friday 9am to 8pm and Saturday 10am to 4pm",
+    "topic": "parks_recreation"
+  },
+  {
+    "id": 8,
+    "question": "What is the process for rezoning a property in Memphis?",
+    "expected_answerable": true,
+    "reference_answer": "Property owners must submit a rezoning application to the Land Use Control Board with a site plan and attend a public hearing",
+    "topic": "zoning"
+  },
+  {
+    "id": 9,
+    "question": "How does Memphis handle stormwater drainage in flood-prone areas?",
+    "expected_answerable": true,
+    "reference_answer": "The city maintains a stormwater management system with retention basins, drainage channels, and pump stations in flood-prone neighborhoods",
+    "topic": "stormwater"
+  },
+  {
+    "id": 10,
+    "question": "What services does the Memphis Animal Shelter provide?",
+    "expected_answerable": true,
+    "reference_answer": "Memphis Animal Services provides animal intake, adoption services, spay/neuter programs, and animal cruelty investigations",
+    "topic": "animal_services"
+  },
+  {
+    "id": 11,
+    "question": "What are the parking regulations downtown during special events?",
+    "expected_answerable": true,
+    "reference_answer": "During major events, temporary no-parking zones are established on Beale Street and surrounding blocks with signage posted 24 hours in advance",
+    "topic": "parking"
+  },
+  {
+    "id": 12,
+    "question": "How can residents report streetlight outages in their neighborhood?",
+    "expected_answerable": true,
+    "reference_answer": "Streetlight outages can be reported through the Memphis 311 app, website, or by calling 311 with the pole number",
+    "topic": "street_lights"
+  },
+  {
+    "id": 13,
+    "question": "What is the Memphis Grizzlies' home game schedule?",
+    "expected_answerable": false,
+    "reference_answer": null,
+    "topic": "out_of_corpus"
+  },
+  {
+    "id": 14,
+    "question": "What is the current stock price of FedEx Corporation?",
+    "expected_answerable": false,
+    "reference_answer": null,
+    "topic": "out_of_corpus"
+  },
+  {
+    "id": 15,
+    "question": "Can you recommend the best barbecue restaurant in Memphis?",
+    "expected_answerable": false,
+    "reference_answer": null,
+    "topic": "out_of_corpus"
+  }
+]

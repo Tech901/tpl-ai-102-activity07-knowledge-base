@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" role="img" aria-label="Sliding Window Chunking Strategy diagram showing overlapping document chunks">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E0E0E"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E1E1E"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="amberBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D5A94"/>
+      <stop offset="100%" stop-color="#1E3F6B"/>
+    </linearGradient>
+    <linearGradient id="greenBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8DC63F"/>
+      <stop offset="100%" stop-color="#6FA832"/>
+    </linearGradient>
+    <linearGradient id="underlineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="310" rx="6" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="18" font-weight="bold" fill="#FAFAFA">Sliding Window Chunking Strategy</text>
+  <rect x="300" y="35" width="300" height="2" rx="1" fill="url(#underlineGrad)"/>
+
+  <!-- Source Document bar -->
+  <text x="40" y="70" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#888">SOURCE DOCUMENT</text>
+  <g filter="url(#shadow)">
+    <rect x="40" y="78" width="820" height="30" rx="4" fill="url(#boxGrad)" stroke="#444" stroke-width="1"/>
+  </g>
+  <text x="450" y="97" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#CCC">Memphis city document full text (~1,200 tokens) ...</text>
+
+  <!-- Parameters label -->
+  <text x="40" y="130" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#888">CHUNKS (chunk_size=400 tokens, overlap=50 tokens)</text>
+
+  <!-- Chunk 0 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="140" width="400" height="40" rx="4" fill="url(#boxGrad)" stroke="#FFBF3B" stroke-width="1.5" stroke-opacity="0.6"/>
+    <rect x="40" y="140" width="4" height="40" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="50" y="157" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#FFBF3B">doc_id_chunk_0</text>
+  <text x="50" y="172" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">400 tokens — "Section 9.24.010 - Purpose. The City of Memphis recognizes..."</text>
+
+  <!-- Chunk 1 (overlapping) -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="190" width="400" height="40" rx="4" fill="url(#boxGrad)" stroke="#2D5A94" stroke-width="1.5" stroke-opacity="0.6"/>
+    <rect x="290" y="190" width="4" height="40" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="300" y="207" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#2D5A94">doc_id_chunk_1</text>
+  <text x="300" y="222" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">400 tokens — "...welfare of Memphis citizens. Section 9.24.020 - Definitions..."</text>
+
+  <!-- Chunk 2 (overlapping) -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="240" width="320" height="40" rx="4" fill="url(#boxGrad)" stroke="#8DC63F" stroke-width="1.5" stroke-opacity="0.6"/>
+    <rect x="540" y="240" width="4" height="40" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="550" y="257" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#8DC63F">doc_id_chunk_2</text>
+  <text x="550" y="272" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">remaining tokens — "...Section 9.24.040 - Maximum Permissible..."</text>
+
+  <!-- Overlap region highlight: chunk_0 ↔ chunk_1 -->
+  <rect x="290" y="140" width="150" height="40" rx="0" fill="#FFBF3B" fill-opacity="0.08" stroke="#FFBF3B" stroke-width="1" stroke-dasharray="4,2" stroke-opacity="0.4"/>
+  <rect x="290" y="190" width="150" height="40" rx="0" fill="#FFBF3B" fill-opacity="0.08" stroke="#FFBF3B" stroke-width="1" stroke-dasharray="4,2" stroke-opacity="0.4"/>
+  <text x="365" y="155" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="8" fill="#FFBF3B" opacity="0.8">50-token overlap</text>
+
+  <!-- Overlap region highlight: chunk_1 ↔ chunk_2 -->
+  <rect x="540" y="190" width="150" height="40" rx="0" fill="#FFBF3B" fill-opacity="0.08" stroke="#FFBF3B" stroke-width="1" stroke-dasharray="4,2" stroke-opacity="0.4"/>
+  <rect x="540" y="240" width="150" height="40" rx="0" fill="#FFBF3B" fill-opacity="0.08" stroke="#FFBF3B" stroke-width="1" stroke-dasharray="4,2" stroke-opacity="0.4"/>
+  <text x="615" y="205" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="8" fill="#FFBF3B" opacity="0.8">50-token overlap</text>
+
+  <!-- Legend -->
+  <text x="40" y="300" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#888">Step size = chunk_size - overlap = 400 - 50 = 350 tokens per slide</text>
+</svg>

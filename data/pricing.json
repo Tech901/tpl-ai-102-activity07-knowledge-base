@@ -1,0 +1,5 @@
+{
+  "gpt-4o": {"input_per_1k": 0.005, "output_per_1k": 0.015},
+  "gpt-4o-mini": {"input_per_1k": 0.00015, "output_per_1k": 0.0006},
+  "text-embedding-ada-002": {"input_per_1k": 0.0001, "output_per_1k": 0.0}
+}

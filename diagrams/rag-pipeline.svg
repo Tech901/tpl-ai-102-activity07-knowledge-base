@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="RAG Pipeline Overview diagram showing query flow through embedding, search, context formatting, answer generation, and citation">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E0E0E"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E1E1E"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="amberBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D5A94"/>
+      <stop offset="100%" stop-color="#1E3F6B"/>
+    </linearGradient>
+    <linearGradient id="greenBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8DC63F"/>
+      <stop offset="100%" stop-color="#6FA832"/>
+    </linearGradient>
+    <linearGradient id="redBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E05555"/>
+      <stop offset="100%" stop-color="#C04040"/>
+    </linearGradient>
+    <linearGradient id="underlineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFBF3B"/>
+      <stop offset="100%" stop-color="#E5A530"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowAmber" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#FFBF3B"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#2D5A94"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#8DC63F"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#E05555"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" rx="6" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="18" font-weight="bold" fill="#FAFAFA">RAG Pipeline Overview</text>
+  <rect x="340" y="35" width="220" height="2" rx="1" fill="url(#underlineGrad)"/>
+
+  <!-- Stage label -->
+  <text x="20" y="70" font-family="Source Sans 3, Calibri, sans-serif" font-size="10" fill="#888">STEPS 4-5: RETRIEVE → GROUND → GENERATE</text>
+
+  <!-- Node 1: User Query -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="85" width="120" height="70" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="20" y="85" width="4" height="70" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="80" y="110" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#FFBF3B">User Query</text>
+  <text x="80" y="125" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">"What are the noise</text>
+  <text x="80" y="136" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">limits in Memphis?"</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="140" y1="120" x2="165" y2="120" stroke="#FFBF3B" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Node 2: Embed Query -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="85" width="120" height="70" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="175" y="85" width="4" height="70" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="235" y="110" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#2D5A94">Embed Query</text>
+  <text x="235" y="125" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">text-embedding-ada-002</text>
+  <text x="235" y="136" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">→ 1536-dim vector</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="295" y1="120" x2="320" y2="120" stroke="#2D5A94" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Node 3: Hybrid Search -->
+  <g filter="url(#shadow)">
+    <rect x="330" y="85" width="130" height="70" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="330" y="85" width="4" height="70" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="395" y="105" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#2D5A94">Hybrid Search</text>
+  <text x="395" y="119" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">Azure AI Search</text>
+  <text x="395" y="130" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">BM25 + Vector (HNSW)</text>
+  <text x="395" y="141" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">→ top-5 chunks</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="460" y1="120" x2="485" y2="120" stroke="#2D5A94" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Node 4: Format Context -->
+  <g filter="url(#shadow)">
+    <rect x="495" y="85" width="120" height="70" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="495" y="85" width="4" height="70" rx="2" fill="url(#blueBar)"/>
+  </g>
+  <text x="555" y="108" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#2D5A94">Format Context</text>
+  <text x="555" y="122" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">[source_1] Title: ...</text>
+  <text x="555" y="133" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">[source_2] Title: ...</text>
+  <text x="555" y="144" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">[source_N] Title: ...</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="615" y1="120" x2="640" y2="120" stroke="#2D5A94" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Node 5: Generate Answer -->
+  <g filter="url(#shadow)">
+    <rect x="650" y="85" width="130" height="70" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="650" y="85" width="4" height="70" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="715" y="105" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#8DC63F">Generate Answer</text>
+  <text x="715" y="119" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">GPT-4o (temp=0.0)</text>
+  <text x="715" y="130" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">+ Grounding Prompt</text>
+  <text x="715" y="141" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">+ Context + Question</text>
+
+  <!-- Grounding Prompt side input -->
+  <g filter="url(#shadow)">
+    <rect x="650" y="180" width="130" height="55" rx="5" fill="url(#boxGrad)" stroke="#555" stroke-width="1" stroke-dasharray="4,2"/>
+    <rect x="650" y="180" width="4" height="55" rx="2" fill="url(#amberBar)"/>
+  </g>
+  <text x="715" y="200" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#FFBF3B">System Prompt</text>
+  <text x="715" y="213" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">Role + Citations + Refusal</text>
+  <text x="715" y="224" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">+ Safety constraints</text>
+
+  <!-- Arrow: prompt → generate -->
+  <line x1="715" y1="180" x2="715" y2="155" stroke="#FFBF3B" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Decision: Refusal check -->
+  <g transform="translate(490, 195)">
+    <polygon points="50,0 100,30 50,60 0,30" fill="url(#boxGrad)" stroke="#E05555" stroke-width="1.5"/>
+    <text x="50" y="28" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="9" font-weight="bold" fill="#E05555">Refusal?</text>
+    <text x="50" y="39" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="8" fill="#CCC">is_refusal()</text>
+  </g>
+
+  <!-- Arrow from generate down to refusal diamond -->
+  <line x1="650" y1="140" x2="600" y2="210" stroke="#CCC" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- Refusal → Refused (YES) -->
+  <g filter="url(#shadow)">
+    <rect x="350" y="200" width="110" height="45" rx="5" fill="url(#boxGrad)" stroke="#E05555" stroke-width="1"/>
+    <rect x="350" y="200" width="4" height="45" rx="2" fill="url(#redBar)"/>
+  </g>
+  <text x="405" y="218" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="10" font-weight="bold" fill="#E05555">Refused</text>
+  <text x="405" y="233" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">"Cannot answer from sources"</text>
+
+  <line x1="490" y1="225" x2="460" y2="225" stroke="#E05555" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <text x="470" y="218" font-family="Source Sans 3, Calibri, sans-serif" font-size="8" fill="#E05555">YES</text>
+
+  <!-- Refusal → Cited Answer (NO) -->
+  <g filter="url(#shadow)">
+    <rect x="490" y="275" width="140" height="50" rx="5" fill="url(#boxGrad)" stroke="#333" stroke-width="1"/>
+    <rect x="490" y="275" width="4" height="50" rx="2" fill="url(#greenBar)"/>
+  </g>
+  <text x="560" y="295" text-anchor="middle" font-family="Syne, Calibri, sans-serif" font-size="11" font-weight="bold" fill="#8DC63F">Cited Answer</text>
+  <text x="560" y="310" text-anchor="middle" font-family="Source Sans 3, Calibri, sans-serif" font-size="9" fill="#CCC">"65 dB daytime [source_1]..."</text>
+
+  <line x1="540" y1="255" x2="555" y2="275" stroke="#8DC63F" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <text x="560" y="262" font-family="Source Sans 3, Calibri, sans-serif" font-size="8" fill="#8DC63F">NO</text>
+</svg>
